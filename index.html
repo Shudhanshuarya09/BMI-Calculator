@@ -53,18 +53,44 @@
             <p class="font-bold text-2xl py-3 ">Age:</p>
             <input type="number " name="age" id="age">
             <p class="font-bold text-2xl px-2 py-3">Weight:</p>
-            <input type="number " name="age" id="weight">
+            <input type="number " name="age" id="weight" placeholder="            In KG.  ">
 
-            <p class="font-bold text-2xl py-3"> Height</p>
-            <input type="number " name="age" id="height">
+            <p class="font-bold text-2xl py-3"> Height:</p>
+            <input type="number " name="age" id="height" placeholder="         In Meter.">
             <br>
             <br>
-            <button class="bg-red-700 font-bold text-white rounded-xl text-3xl w-56 text-center justify-center" onclick="bmiCalculator()">
+            <button class="bg-red-700 font-bold text-white rounded-xl text-3xl w-56 text-center justify-center"
+                onclick="bmiCalculator()">
                 CALCULATE
             </button>
-            <h1 id="bmi-result"></h1>
+            <h1 id="bmi-result" class="pt-7 font-semibold text-black text-2xl"></h1>
         </div>
     </div>
+    <br>
+    <br>
+    <!--TABLE-->
+    <div class="px-16 pt-7 text-3xl p-6 border-solid border-2 border-black table-auto justify-center border-2px">
+        <table class="border-2px ">
+            <thead>
+                <tr>
+                    <th class="underline">METRIC</th>
+                    <th class="underline">IMPERIAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  class="space-x-6">
+                    
+                    <th class="text-green-400"> BMI = <br>
+                        weight(kg)/[height(m)]*2</th>
+                   
+                    <th class="text-green-400"> BMI = <br>
+                        703*weight(lbs)/[height(in)]*2</th>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--Section-2-->
     <section class="bg-white">
         <h6 class="px-14 py-14 text-5xl font-bold"> Accurate BMI Calculator </h6>
         <p class="px-14  font-normal text-2xl tracking-wide">We think this is our best BMI Calculator ever. It may be
@@ -88,6 +114,7 @@
     <br>
     <br>
     <hr class="bg-black shadow-2xl">
+    <!--Footer-->
     <footer class="bg-green-700">
         <ul class="flex">
             <div class="w-72 py-6">
@@ -136,18 +163,18 @@
             Made with ❤️ by Arya | ©2023 All rights reserved
         </div>
     </footer>
-
+    <!--Javascript-->
     <script>
         console.log("HEllo World");
-        
-        function bmiCalculator () {
+
+        function bmiCalculator() {
             const age = document.getElementById('age').value;
             const weight = document.getElementById('weight').value;
             const height = document.getElementById('height').value;
 
             // console.log(age,weight,height);
-            const bmi = weight/Math.pow(height,2);
-            console.log("BMI ==> ",bmi );
+            const bmi = weight / Math.pow(height, 2);
+            console.log("BMI ==> ", bmi);
             const bmiResult = document.getElementById("bmi-result");
             bmiResult.innerHTML = `Your BMI is ${bmi} !`;
         }
