@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
-
+    <style>
+        /* table , th , td {
+           border : 1px solid black;
+       } */
+   </style>
 </head>
 
 <body>
@@ -63,7 +67,8 @@
                 onclick="bmiCalculator()">
                 CALCULATE
             </button>
-            <h1 id="bmi-result" class="pt-7 font-semibold text-black text-2xl"></h1>
+            <h1 id="bmi-result" class="pt-7 font-semibold text-black text-3xl"></h1>
+            <h2 id="result" class="pt-4 font-extrabold text-2xl  tracking-widest"></h2>
         </div>
     </div>
     <br>
@@ -73,19 +78,21 @@
         <table class="border-2px ">
             <thead>
                 <tr>
-                    <th class="underline">METRIC</th>
-                    <th class="underline">IMPERIAL</th>
+                    <th class="underline border-2px border-black border-solid">METRIC</th>
+                    
+                    <th class="underline border-2px border-black border-solid">IMPERIAL</th>
                 </tr>
             </thead>
             <tbody>
-                <tr  class="space-x-6">
-                    
-                    <th class="text-green-400"> BMI = <br>
-                        weight(kg)/[height(m)]*2</th>
-                   
-                    <th class="text-green-400"> BMI = <br>
-                        703*weight(lbs)/[height(in)]*2</th>
-                    
+                <tr  class="space-x-6"> 
+                    <td class="border-2px border-black border-solid"> BMI = 
+                        weight(kg)/[height(m)]*2
+                    </td>
+                    <td>        </td>
+                    <td class="border-2px border-black border-solid"> BMI = 
+                        703*weight(lbs)/[height(in)]*2
+                    </td> 
+                    <td>   </td>
                 </tr>
             </tbody>
         </table>
@@ -165,7 +172,7 @@
     </footer>
     <!--Javascript-->
     <script>
-        console.log("HEllo World");
+        // console.log("HEllo World");
 
         function bmiCalculator() {
             const age = document.getElementById('age').value;
@@ -177,6 +184,27 @@
             console.log("BMI ==> ", bmi);
             const bmiResult = document.getElementById("bmi-result");
             bmiResult.innerHTML = `Your BMI is ${bmi} !`;
+            const result = document.getElementById("result");
+
+            if(bmi<18.5){
+                // console.log("underweight");
+                result.innerHTML =  " (You are underweight)";
+                // result.style.color = "bg-red-700";
+                result.classList.add("text-red-700");
+            //    document.querySelector("bmi").innerHTML = "You are underweight";
+            }
+            else if (bmi > 25){
+                // console.log("Overweight")
+                result.innerHTML = "(You are Overweight)";
+                // result.style.color = "bg-red-700";
+                result.classList.add("text-red-700");
+            }
+            else{
+                // console.log("Normal");
+                result.innerHTML = "(You are Normal)";
+                // result.style.color = "bg-green-400";
+                result.classList.add("text-green-900");
+            }
         }
     </script>
 </body>
