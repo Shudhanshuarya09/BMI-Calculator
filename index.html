@@ -32,8 +32,8 @@
     <!--section-1-->
     <div class="flex justify-center items-center bg-green-300">
         <div class="w-1/2 ">
-            <h4 class="font-bold text-5xl px-28 py-14 underline"> BMI Calculator </h4>
-            <h2 class="text-2xl px-4"> Get to know your BMI plus your calorie requirements, macros,
+            <h4 class="font-bold text-5xl px-28 pt-10 underline"> BMI Calculator </h4>
+            <h2 class="text-2xl px-4 pt-6"> Get to know your BMI plus your calorie requirements, macros,
                 tdee, bmr, rmr, ideal weight, mmp, and much more all in one.</h2>
             <ol class="px-16 p-10 text-2xl font-medium py-8 list-disc">
                 <li>100% Completely Free</li><br>
@@ -46,17 +46,18 @@
         <div class="border-l-2 border-black h-full"></div>
         <div class="w-1/2 px-32">
             <fieldset>
-                <p class="font-bold text-2xl">SEX:</p>
-                <select class="rounded-lg h-10 w-96 px-14 bg-green-200 border-black text-black" name="Gender"
+                <p class="font-bold text-2xl py-3">Name:</p>
+                <input name="Name" id="name">
+                <!-- <select class="rounded-lg h-10 w-96 px-14 bg-green-200 border-black text-black" name="Gender"
                     id="Gender">
                     <option> </option>
                     <option value="Male"> Male</option>
                     <option value="Female"> Female</option>
-                </select>
+                </select> -->
             </fieldset>
             <p class="font-bold text-2xl py-3 ">Age:</p>
             <input type="number " name="age" id="age">
-            <p class="font-bold text-2xl px-2 py-3">Weight:</p>
+            <p class="font-bold text-2xl  py-3">Weight:</p>
             <input type="number " name="age" id="weight" placeholder="            In KG.  ">
 
             <p class="font-bold text-2xl py-3"> Height:</p>
@@ -67,8 +68,9 @@
                 onclick="bmiCalculator()">
                 CALCULATE
             </button>
-            <h1 id="bmi-result" class="pt-7 font-semibold text-black text-3xl"></h1>
-            <h2 id="result" class="pt-4 font-extrabold text-2xl  tracking-widest"></h2>
+            <h1 id="bmi-result" class="pt-4 font-semibold text-black text-2xl"></h1>
+            <h3 id="name-heading" class="pt-3 font-extrabold text-3xl text-blue-700"></h3>
+            <h2 id="result" class="pt-0 font-extrabold text-2xl  tracking-widest"></h2>
         </div>
     </div>
     <br>
@@ -181,10 +183,14 @@
 
             // console.log(age,weight,height);
             const bmi = weight / Math.pow(height, 2);
-            console.log("BMI ==> ", bmi);
+            // console.log("BMI ==> ", bmi);
             const bmiResult = document.getElementById("bmi-result");
             bmiResult.innerHTML = `Your BMI is ${bmi} !`;
             const result = document.getElementById("result");
+            var Name = document.getElementById("name").value
+            // console.log("Name") 
+            const nameHeading = document.getElementById("name-heading");
+            nameHeading.innerHTML = " Hey ! " + Name; 
 
             if(bmi<18.5){
                 // console.log("underweight");
@@ -201,7 +207,7 @@
             }
             else{
                 // console.log("Normal");
-                result.innerHTML = "(You are Normal)";
+                result.innerHTML = "(You BMI is Normal)";
                 // result.style.color = "bg-green-400";
                 result.classList.add("text-green-900");
             }
