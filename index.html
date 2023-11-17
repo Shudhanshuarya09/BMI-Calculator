@@ -182,7 +182,7 @@
             const height = document.getElementById('height').value;
 
             // console.log(age,weight,height);
-            const bmi = weight / Math.pow(height, 2);
+            const bmi = Math.floor(weight / Math.pow(height, 2));
             // console.log("BMI ==> ", bmi);
             const bmiResult = document.getElementById("bmi-result");
             bmiResult.innerHTML = `Your BMI is ${bmi} !`;
