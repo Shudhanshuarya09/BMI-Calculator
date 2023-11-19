@@ -64,7 +64,7 @@
             <input type="number " name="age" id="height" placeholder="         In Meter.">
             <br>
             <br>
-            <button class="bg-red-700 font-bold text-white rounded-xl text-3xl w-56 text-center justify-center"
+            <button class=" font-bold text-white rounded-xl text-3xl w-56 text-center justify-center bg-red-700 shadow-lg shadow-red-700/50"
                 onclick="bmiCalculator()">
                 CALCULATE
             </button>
@@ -76,8 +76,8 @@
     <br>
     <br>
     <!--TABLE-->
-    <div class="px-16 pt-7 text-3xl p-6 border-solid border-2 border-black table-auto justify-center border-2px">
-        <table class="border-2px ">
+    
+        <!-- <table class="table-auto">
             <thead>
                 <tr>
                     <th class="underline border-2px border-black border-solid">METRIC</th>
@@ -97,7 +97,22 @@
                     <td>   </td>
                 </tr>
             </tbody>
-        </table>
+        </table> -->
+    
+    <div class="flex px-40 border-px border-solid border-4 border-black p-2">
+        <div class="w-1/2 ">
+        <h1 class="text-5xl font-bold">Imperial</h1>
+        <br>
+        <p class="text-2xl text-green-600 font-semibold">BMI = 
+            703*weight(lbs)/[height(in)]*2</p>
+        </div>
+        <div class="border-l-2 border-black h-full "></div>
+        <div class="w-1/2">
+        <h1 class="text-5xl font-bold">Metric</h1>
+        <br>
+        <p class="text-2xl text-green-600 font-semibold ">BMI = 
+            weight(kg)/[height(m)]*2</p>
+        </div>
     </div>
     <!--Section-2-->
     <section class="bg-white">
@@ -155,7 +170,6 @@
                 <li>Exante</li>
                 <li> MyVitamins</li>
                 <li> View All</li>
-                <li> About</li>
             </ul>
             <ul class="space content-between pt-32 px-36 tracking-widest space-y-3">
                 <span class="font-bold text-xl">
